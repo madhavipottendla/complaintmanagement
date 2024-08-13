@@ -32,15 +32,18 @@ const ComplaintTrackingScreen = () => {
   return (
     <View>
     <Header />
-    <View style = {{padding :10}}>
+    <View style = {{padding :15,borderWidth:0,width:370,marginTop:20,marginLeft:10,borderRadius:17,elevation:1,
+      backgroundColor:"white",marginHorizontal:50
+    }}>
     <Text style = {{fontWeight:'700',fontSize:30}}>Complaint Tracker</Text>
-      <Text style = {{fontWeight:'700',fontSize:20}} >Complaint Id:PRKOOO9987</Text>
-
+    <Text style = {{fontWeight:'700',fontSize:20}} >Complaint Id:PRKOOO9987</Text>
+    <Text style = {{fontWeight:'700',fontSize:20}} >Name:Prabhas</Text>
+    <Text style = {{fontWeight:'700',fontSize:20}} >Complaint Type:A4 Violation</Text>
     </View>
     <View style={styles.container}>
    
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-        <Animated.View style={[styles.stepsContainer, { transform: [{ translateY: interpolatedTranslateY }] }]}>
+        <View style={[styles.stepsContainer,]}>
           {steps.map((step, index) => (
             <View key={index} style={styles.stepContainer}>
               <View style={[styles.circle, step.completed && styles.circleCompleted]}>
@@ -54,12 +57,10 @@ const ComplaintTrackingScreen = () => {
               {index < steps.length - 1 && <View style={styles.line} />}
             </View>
           ))}
-        </Animated.View>
+        </View>
       </ScrollView>
     </View>
     <View style={styles.containericon}>
-            {/* Your existing content */}
-            
             <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('home', { screen: 'Complaint' })}>
                 <Ionicons name="home" size={30} color="black" />
             </TouchableOpacity>
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     marginHorizontal:40,
-    marginVertical:100
+    marginVertical:60
     
   },
   stepsContainer: {
@@ -131,16 +132,16 @@ const styles = StyleSheet.create({
 
   containericon: {
     flex: 1,
-    // Your other styles
+
 },
 iconContainer: {
     position: 'absolute',
-    top: 10, // Adjust this value as needed
-    right: 10, // Adjust this value as needed
+    top: 10, 
+    right: 10, 
     padding: 10,
-    backgroundColor: 'white', // Optional: background color for the icon
-    borderRadius: 25, // Optional: make the background circular
-    elevation: 5, // Optional: add shadow for the icon
+    backgroundColor: 'white', 
+    borderRadius: 25, 
+    elevation: 5, 
 },
 });
 

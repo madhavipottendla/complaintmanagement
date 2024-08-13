@@ -39,7 +39,7 @@ export default function Complaint() {
     <Animatable.Image animation='fadeInRight'  duration={3000} source={require('../assets/image1.png')} style={styles.sliderimage} />
     </View>
     <View >
-        <TouchableOpacity style={styles.complaint1} onPress={()=>navigation.navigate('track')}>
+        <TouchableOpacity style={styles.complaint1} onPress={()=>navigation.navigate('login')}>
           <Text style={styles.tracktext} >Track Your Complaint</Text>
         </TouchableOpacity>
       </View>
